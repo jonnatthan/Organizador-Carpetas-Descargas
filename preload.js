@@ -1,0 +1,25 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('api', {
+  state: () => ipcRenderer.invoke('state'),
+  createFolder: n => ipcRenderer.invoke('create-folder', n),
+  move: (names, folder) => ipcRenderer.invoke('move', names, folder),
+  organizeAll: () => ipcRenderer.invoke('organize-all'),
+  setAuto: v => ipcRenderer.invoke('set-auto', v),
+  setPromptOnDownload: v => ipcRenderer.invoke('set-prompt-download', v),
+  openPromptFor: name => ipcRenderer.invoke('open-prompt-for', name),
+  getPromptData: () => ipcRenderer.invoke('get-prompt-data'),
+  resolvePrompt: d => ipcRenderer.invoke('resolve-prompt', d),
+  addRule: r => ipcRenderer.invoke('add-rule', r),
+  deleteRule: id => ipcRenderer.invoke('delete-rule', id),
+  assign: (name, folder, searchIn, pattern) => ipcRenderer.invoke('assign', name, folder, searchIn, pattern),
+  undo: () => ipcRenderer.invoke('undo'),
+  openFile: n => ipcRenderer.invoke('open-file', n),
+  revealFile: n => ipcRenderer.invoke('reveal-file', n),
+  openFolder: rel => ipcRenderer.invoke('open-folder', rel),
+  revealPath: p => ipcRenderer.invoke('reveal-path', p),
+  chooseDest: () => ipcRenderer.invoke('choose-dest'),
+  saveSettings: s => ipcRenderer.invoke('save-settings', s),
+  testTelegram: () => ipcRenderer.invoke('test-telegram'),
+  on: (ch, fn) => ipcRenderer.on(ch, (_, d) => fn(d)),
+});

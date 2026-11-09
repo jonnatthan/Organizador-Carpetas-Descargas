@@ -1,0 +1,46 @@
+{
+  "name": "organizador-descargas",
+  "productName": "Organizador de Descargas",
+  "version": "1.4.0",
+  "description": "Gestiona y clasifica automÃ¡ticamente los archivos de la carpeta Descargas",
+  "main": "main.js",
+  "author": "dydjo",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.dydjo.organizadordescargas",
+    "productName": "Organizador de Descargas",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "engine.js",
+      "renderer/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Organizador de Descargas"
+    }
+  },
+  "dependencies": {
+    "pdf-parse": "^1.1.1",
+    "xlsx": "^0.18.5"
+  }
+}
+
