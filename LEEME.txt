@@ -1,0 +1,10 @@
+﻿ORGANIZADOR DE DESCARGAS 1.4.0 (Admin Dashboard V2 Glass + Renombrado al Descargar)
+
+Instalar en cualquier PC con Windows:
+1. Copia esta carpeta (USB, nube o red).
+2. Ejecuta 'Organizador de Descargas Setup 1.4.0.exe'. Si SmartScreen avisa: 'Mas informacion' > 'Ejecutar de todas formas'.
+3. Si ya tenias una version anterior abierta, haz clic derecho en el icono junto al reloj ('Salir') e instala encima.
+
+NOVEDADES 1.4.0:
+- Ventana emergente automatica al descargar un archivo: te permite cambiarle el nombre (conservando la extension) y elegir/confirmar la carpeta donde se guardara automaticamente al presionar Enter.
+- Interruptor 'Renombrar al bajar' en la barra lateral y en Ajustes, mas boton de lapiz en cada fila para renombrar y guardar cualquier archivo existente.
